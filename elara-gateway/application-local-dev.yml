@@ -9,7 +9,7 @@ spring:
     gateway:
       routes:
         - id: elara-users
-          uri: http://localhost:8085
+          uri: lb:elara-users
           predicates:
             - Path=/api/*/users/**
 
