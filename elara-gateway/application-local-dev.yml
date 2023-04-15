@@ -14,32 +14,32 @@ spring:
             - Path=/api/*/users/**
 
         - id: elara-login
-          uri: http://localhost:8086
+          uri: lb://elara-login
           predicates:
             - Path=/api/*/auth/**
 
         - id: elara-products-get
-          uri: http://localhost:8082
+          uri: lb://elara-products-get
           predicates:
             - Path=/api/*/products/**,/api/*/sports/**,/api/*/features/**,/api/*/colors/**
             - Method=GET
 
         - id: elara-orders
-          uri: http://localhost:8087
+          uri: lb://elara-orders
           predicates:
             - Path=/api/*/orders/**
 
         - id: elara-admin-console
-          uri: http://localhost:8083
+          uri: lb://elara-admin-console
           predicates:
             - Path=/api/*/admin-console/**
 
         - id: elara-delivery
-          uri: http://localhost:8089
+          uri: lb://elara-delivery
           predicates:
             - Path=/api/*/delivery/**
 
         - id: elara-payment
-          uri: http://localhost:8090
+          uri: lb://elara-payment
           predicates:
             - Path=/api/*/payment/**
